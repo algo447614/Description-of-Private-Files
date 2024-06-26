@@ -1,0 +1,152 @@
+COST SAVINGS CALCULATION Workbook Macros
+
+This repository contains a collection of VBA macros designed to automate and optimize data management and analysis tasks within a workbook. These macros showcase advanced VBA programming skills, including algorithm development and data quantification, aligning with the requirements of an analyst. Project Overview Initial Goal
+
+The primary goal of this project was to reduce float hours and float quantity. Float hours represent the cushion of hours we have of extra stock, while float quantity refers to the stockpile of actual parts separate from hours. I was initially provided with a sheet containing thousands of part numbers along with attributes such as ship-from state, cost, float hours and quantity, cost per part, average daily usage, and ship-time from supplier. Process and Methodology
+
+Identification and Separation by State:
+    Created a program to iterate over all part numbers and identify all ship-from states.
+    Generated one new sheet per ship-from state without any duplicates, naming the new sheet after the corresponding ship-from state.
+    Pasted the entire row of each part number associated with that state into the corresponding sheet.
+
+Cost Analysis and Calculation:
+    Analyzed the sheet and created a formula to calculate the average cost per day per part based on average daily usage, which was identified as 18 hours (9 hours times two shifts).
+    Calculated the cost per hour by dividing the cost per part by the parts per hour.
+    Input three new columns for the user to input the desired new quantities for float hours and quantity.
+    The new cost column dynamically updated to indicate the real-time dollar amount of savings per part.
+
+Real-Time Savings Calculation:
+    Created a table to indicate total savings in each category of float hours or quantity for the entire ship-from state, dynamically updating with each change in new hours or quantity input by the user.
+
+Summary Sheet:
+    Created a summary sheet with a table listing all ship-from states in the first column.
+    The subsequent columns indicated savings per category of float hours and float quantity, with a final column for total savings.
+    This table dynamically updated with all or any updates by user input to provide a real-time amount of savings.
+
+Macros
+
+    CreateTableInAllSheets
+
+Creates a table in all sheets except the "Inventory Sheet", sets up a table range, applies a table style, and populates it with headers and formulas for data analysis.
+
+vba
+
+Sub CreateTableInAllSheets() ' Code for creating tables in all sheets End Sub
+
+    ApplyParametersToAllSheets
+
+Applies specific parameters and formulas to all sheets except the "Inventory Sheet". Sets header values, applies formulas, and colors headers based on predefined parameters.
+
+vba
+
+Sub ApplyParametersToAllSheets() ' Code for applying parameters to all sheets End Sub
+
+    ApplyStaticColumnsToAllSheets
+
+Applies static columns and their corresponding formulas to all sheets except the "Inventory Sheet". Sets header values and applies formulas for specific rows.
+
+vba
+
+Sub ApplyStaticColumnsToAllSheets() ' Code for applying static columns to all sheets End Sub
+
+    ApplyFiltersToAllSheets
+
+Applies AutoFilter to the first row (columns A to AH) in all sheets except the "Inventory Sheet".
+
+vba
+
+Sub ApplyFiltersToAllSheets() ' Code for applying filters to all sheets End Sub
+
+    CreateHeaders
+
+Sets headers in the "Data By State" sheet with predefined values.
+
+vba
+
+Sub CreateHeaders() ' Code for creating headers End Sub
+
+    ListSheetNames
+
+Lists the names of all sheets in the "Data By State" sheet except the "Inventory Sheet" and "Data By State".
+
+vba
+
+Sub ListSheetNames() ' Code for listing sheet names End Sub
+
+    ApplyFormulas
+
+Applies dynamic and static formulas to the [] sheet, ensuring comprehensive data analysis and quantification.
+
+vba
+
+Sub ApplyFormulas() ' Code for applying formulas End Sub
+
+    IdentifyFormulas
+
+Identifies and categorizes formulas in the [] sheet as dynamic or static.
+
+vba
+
+Sub IdentifyFormulas() ' Code for identifying formulas End Sub
+
+    ListFormulasInRange
+
+Lists all formulas in a specified range (rows 1-6, columns A-AY) in the [] sheet.
+
+vba
+
+Sub ListFormulasInRange() ' Code for listing formulas in a range End Sub
+
+    ListFormulasWithHeaders
+
+Lists all formulas in a specified range (rows 1-6, columns A-AY) in the [] sheet along with their headers.
+
+vba
+
+Sub ListFormulasWithHeaders() ' Code for listing formulas with headers End Sub
+
+    ListFormulasWithHeadersReplaced
+
+Lists all formulas in a specified range (rows 1-6, columns A-AY) in the [] sheet with headers replaced in the formulas.
+
+vba
+
+Sub ListFormulasWithHeadersReplaced() ' Code for listing formulas with headers replaced End Sub
+
+    PopulateDataByStateSheet
+
+Compiles data from various state sheets into the "Data By State" sheet, autofitting columns for better readability.
+
+vba
+
+Sub PopulateDataByStateSheet() ' Code for populating data by state sheet End Sub
+
+    ApplyParametersTo[]Sheet
+
+Applies specific parameters and formulas to the [] sheet, ensuring that all required calculations and analyses are performed.
+
+vba
+
+Sub ApplyParametersTo[]Sheet() ' Code for applying parameters to [] sheet End Sub
+
+Usage
+
+Open the  Workbook:
+    Open the [program].xlsm workbook in Excel.
+
+Access the Macros:
+    Press ALT + F11 to open the VBA editor.
+    Navigate to the modules listed above to view and run the macros.
+
+Run the Macros:
+    You can run the macros from the VBA editor or assign them to buttons within your workbook for easy access.
+
+Skills Demonstrated
+
+Algorithm Development: Implementing complex algorithms to automate data management tasks.
+Data Quantification: Utilizing VBA to calculate and analyze large datasets efficiently.
+Excel Automation: Enhancing Excel's functionality through custom macros, improving productivity and accuracy.
+
+Contact
+
+A, gondicka@gmail.com
